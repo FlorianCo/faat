@@ -1,5 +1,7 @@
 'use strict';
 
+const e = React.createElement;
+
 class LikeButton extends React.Component {
   constructor(props) {
     super(props);
@@ -19,6 +21,20 @@ class LikeButton extends React.Component {
   }
 }
 
+class MonContainer extends React.Component {
+  render() {
+    return(
+     <div style={{ backgroundColor: 'red' }}>
+      <LikeButton/>
+      <LikeButton/>
+      <LikeButton/>
+      <LikeButton/>
+      <LikeButton/>
+    </div>
+    )
+  }
+  
+}
 
 const domContainer = document.querySelector('#like_button_container');
-ReactDOM.render(<MonContainer />, domContainer);
+ReactDOM.render(e(LikeButton), domContainer);
